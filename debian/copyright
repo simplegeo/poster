@@ -1,0 +1,24 @@
+This work was packaged for Debian by:
+
+    Ian Eure <ian@simplegeo.com> on Tue, 01 Jun 2010 14:47:40 -0700
+
+It was downloaded from http://pypi.python.org/pypi/poster
+
+Upstream Author(s):
+
+    Chris AtLee <chris@atlee.ca>
+
+Copyright:
+
+    Copyright (C) 2009 Chris AtLee
+
+License:
+
+    MIT
+
+The Debian packaging is:
+
+    Copyright (C) 2010 Ian Eure <ian@simplegeo.com>
+
+and is licensed under the BSD license, see `/usr/share/common-licenses/BSD'.
+
