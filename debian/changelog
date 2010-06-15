@@ -1,3 +1,9 @@
+python-poster (0.4-sg22) unstable; urgency=low
+
+  * Placeholder for git-dch while I fix the version.
+
+ -- Ian Eure <ian@simplegeo.com>  Tue, 15 Jun 2010 15:47:14 -0700
+
 python-poster (0.4-4sg22) UNRELEASED; urgency=low
 
   * UNRELEASED
