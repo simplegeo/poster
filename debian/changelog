@@ -1,3 +1,9 @@
+python-poster (0.4-4sg22) UNRELEASED; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Tue, 15 Jun 2010 22:44:36 +0000
+
 python-poster (0.4-4sg1) unstable; urgency=low
 
   * Switch to sg versioning.
