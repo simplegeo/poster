@@ -1,3 +1,9 @@
+python-poster (0.4-sg24) lucid; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Tue, 15 Jun 2010 22:53:01 +0000
+
 python-poster (0.4-sg22) unstable; urgency=low
 
   * Placeholder for git-dch while I fix the version.
