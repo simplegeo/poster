@@ -1,3 +1,9 @@
+python-poster (0.4-4sg1) unstable; urgency=low
+
+  * Switch to sg versioning.
+
+ -- Ian Eure <ian@simplegeo.com>  Tue, 15 Jun 2010 15:41:23 -0700
+
 python-poster (0.4-3) unstable; urgency=low
 
   * Build-Depends on python-setuptools.
