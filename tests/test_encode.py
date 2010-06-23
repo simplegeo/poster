@@ -2,6 +2,7 @@
 from unittest import TestCase
 import mimetypes
 import poster.encode
+import StringIO
 
 def unix2dos(s):
     return s.replace("\n", "\r\n")
@@ -116,6 +117,17 @@ Content-Length: 42
                 poster.encode.encode_file_header("XXXXXXXXX", "foo", 42,
                     "test\"file.txt"))
 
+    def test_unicode_filename(self):
+        expected = unix2dos("""--XXXXXXXXX
+Content-Disposition: form-data; name="foo"; filename="&#9731;.txt"
+Content-Type: text/plain; charset=utf-8
+Content-Length: 42
+
+""")
+        self.assertEqual(expected,
+                poster.encode.encode_file_header("XXXXXXXXX", "foo", 42,
+                    u"\N{SNOWMAN}.txt"))
+
 class TestEncodeAndQuote(TestCase):
     def test(self):
         self.assertEqual("foo+bar", poster.encode.encode_and_quote("foo bar"))
@@ -167,3 +179,43 @@ bar
                  'Content-Type': 'multipart/form-data; boundary=%s' % boundary})
         self.assertEqual("".join(datagen), expected)
 
+    def test_multiple_leys(self):
+        params = poster.encode.MultipartParam.from_params(
+                [("key", "value1"), ("key", "value2")])
+        boundary = "XYZXYZXYZ"
+        datagen, headers = poster.encode.multipart_encode(params, boundary)
+        encoded = "".join(datagen)
+
+        expected = unix2dos("""--XYZXYZXYZ
+Content-Disposition: form-data; name="key"
+Content-Type: text/plain; charset=utf-8
+Content-Length: 6
+
+value1
+--XYZXYZXYZ
+Content-Disposition: form-data; name="key"
+Content-Type: text/plain; charset=utf-8
+Content-Length: 6
+
+value2
+--XYZXYZXYZ--
+""")
+        self.assertEqual(encoded, expected)
+
+
+    def test_stringio(self):
+        fp = StringIO.StringIO("file data")
+        params = poster.encode.MultipartParam.from_params( [("foo", fp)] )
+        boundary = "XYZXYZXYZ"
+        datagen, headers = poster.encode.multipart_encode(params, boundary)
+        encoded = "".join(datagen)
+
+        expected = unix2dos("""--XYZXYZXYZ
+Content-Disposition: form-data; name="foo"
+Content-Type: text/plain; charset=utf-8
+Content-Length: 9
+
+file data
+--XYZXYZXYZ--
+""")
+        self.assertEqual(encoded, expected)
