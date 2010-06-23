@@ -1,12 +1,12 @@
 Metadata-Version: 1.0
 Name: poster
-Version: 0.4
+Version: 0.6.0
 Summary: Streaming HTTP uploads and multipart/form-data encoding
 Home-page: http://atlee.ca/software/poster
 Author: Chris AtLee
 Author-email: chris@atlee.ca
 License: MIT
-Download-URL: http://atlee.ca/software/poster/dist/0.4
+Download-URL: http://atlee.ca/software/poster/dist/0.6.0
 Description: The modules in the Python standard library don't provide a way to upload large
         files via HTTP without having to load the entire file into memory first.
         

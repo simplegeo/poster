@@ -1,5 +1,4 @@
 MANIFEST.in
-setup.cfg
 setup.py
 poster/__init__.py
 poster/encode.py
