@@ -6,11 +6,9 @@ DEB_PYTHON_SYSTEM=pysupport
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/python-distutils.mk
 
-check::
+build/python-poster::
 	python setup.py nosetests \
         --with-xunit --xunit-file $(ARTIFACTS)/xunit.xml \
         --with-coverage --cover-branch --cover-tests \
         --cover-outfile $(ARTIFACTS)/coverage.xml \
         --cover-report html --cover-directory $(ARTIFACTS)/htmlcov
-
-configure/python-poster:: check
