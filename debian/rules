@@ -12,3 +12,6 @@ build/python-poster::
         --with-coverage --cover-branch --cover-tests \
         --cover-outfile $(ARTIFACTS)/coverage.xml \
         --cover-report html --cover-directory $(ARTIFACTS)/htmlcov
+	# The plugin doesn't actually generate the XML report for some
+	# reaspn, so explicitly do it here.
+	python-coverage xml
