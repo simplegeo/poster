@@ -7,7 +7,10 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/python-distutils.mk
 
 check::
-	python setup.py nosetests --cover-html-dir $(ARTIFACTS)/htmlcov \
-                              --xunit-file $(ARTIFACTS)/xunit.xml
+	python setup.py nosetests --with-xunit --xunit-file xunit.xml \
+                              --with-coverage --cover-report html \
+                              --cover-branch --cover-tests \
+                              --cover-outfile coverage.xml
+	python-coverage xml
 
 configure/python-poster:: check

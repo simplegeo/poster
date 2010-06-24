@@ -3,7 +3,7 @@ Section: python
 Priority: extra
 Maintainer: SimpleGeo Nerds <nerds@simplegeo.com>
 Uploaders: Ian Eure <ian@simplegeo.com>
-Build-Depends: cdbs, debhelper (>= 7), python, python-support (>= 1.0.4), python-setuptools (>= 0.6.10), python-paste, python-webob, python-nose, python-openssl, python-coverage
+Build-Depends: cdbs, debhelper (>= 7), python, python-support (>= 1.0.4), python-setuptools (>= 0.6.10), python-paste, python-webob, python-openssl, python-coverage (>= 3.4a1), python-nose (>= 0.11.3)
 Standards-Version: 3.8.4
 Homepage: http://atlee.ca/software/poster
 
