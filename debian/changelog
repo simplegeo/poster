@@ -1,3 +1,13 @@
+python-poster (0.6.0-sg29) lucid; urgency=low
+
+  [ Ian Eure ]
+  * Build-depend on python-coverage.
+  * Fix running tests in the build.
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Sat, 26 Jun 2010 00:05:18 +0000
+
 python-poster (0.6.0-sg28) lucid; urgency=low
 
   [ Ian Eure ]
